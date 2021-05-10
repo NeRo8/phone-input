@@ -1,4 +1,4 @@
-import React, {useEffect, useState} from 'react';
+import React, { useEffect, useState } from "react";
 import {
   View,
   TextInput,
@@ -11,13 +11,13 @@ import {
   StyleProp,
   ViewStyle,
   TextStyle,
-} from 'react-native';
+} from "react-native";
 
-import {getFlag, COUNTRIES} from './config';
+import { getFlag, COUNTRIES } from "./config";
 
-import styles from './styles';
+import styles from "./styles";
 
-interface IInputPhoneProps extends TextInputProps {
+export interface IInputPhoneProps extends TextInputProps {
   containerStyle?: StyleProp<ViewStyle>;
   inputContainerStyle?: StyleProp<ViewStyle>;
   inputStyle?: StyleProp<TextStyle>;
@@ -43,7 +43,7 @@ const InputPhone = (props: IInputPhoneProps) => {
     containerStyle,
     inputContainerStyle,
     inputStyle,
-    placeholder = 'Enter phone number',
+    placeholder = "Enter phone number",
     label,
     labelStyle,
     message,
@@ -55,7 +55,7 @@ const InputPhone = (props: IInputPhoneProps) => {
     onChangeText,
     value,
     searchInputStyle,
-    placeholderSearch = 'Search',
+    placeholderSearch = "Search",
     searchInputContainerStyle,
     itemContainerStyle,
     itemStyle,
@@ -64,20 +64,20 @@ const InputPhone = (props: IInputPhoneProps) => {
   } = props;
   const [country, setCountry] = useState(COUNTRIES[0]);
   const [isListVisible, setListVisible] = useState(false);
-  const [searchQuery, setSearchQuery] = useState('');
+  const [searchQuery, setSearchQuery] = useState("");
   const [filteredCountries, setFilteredCountries] = useState();
 
   const onChangeListVisible = () => setListVisible(!isListVisible);
 
   useEffect(() => {
-    const result = COUNTRIES.filter(itemCountry =>
-      itemCountry.name.toLowerCase().includes(searchQuery.toLowerCase()),
+    const result = COUNTRIES.filter((itemCountry) =>
+      itemCountry.name.toLowerCase().includes(searchQuery.toLowerCase())
     );
 
     setFilteredCountries(result);
   }, [searchQuery]);
 
-  const renderItem = ({item}) => {
+  const renderItem = ({ item }) => {
     const onPressItem = () => {
       setCountry(item);
       setListVisible(false);
@@ -110,7 +110,8 @@ const InputPhone = (props: IInputPhoneProps) => {
         <View style={[styles.inputContainerStyle, inputContainerStyle]}>
           <TouchableOpacity
             style={styles.codeContainerStyle}
-            onPress={onChangeListVisible}>
+            onPress={onChangeListVisible}
+          >
             <Image
               source={getFlag(country.iso2)}
               style={[styles.flagContainerStyle, flagContainerStyle]}
@@ -140,7 +141,8 @@ const InputPhone = (props: IInputPhoneProps) => {
             style={[
               styles.searchInputContainerStyle,
               searchInputContainerStyle,
-            ]}>
+            ]}
+          >
             <TextInput
               placeholder={placeholderSearch}
               style={[styles.searchInputStyle, searchInputStyle]}
@@ -156,7 +158,7 @@ const InputPhone = (props: IInputPhoneProps) => {
               styles.listContentContainerStyle,
               listContentContainerStyle,
             ]}
-            keyExtractor={item => item.iso2}
+            keyExtractor={(item) => item.iso2}
           />
         </View>
       )}
