@@ -1,14 +1,15 @@
-import {StyleSheet} from 'react-native';
+import { StyleSheet } from "react-native";
 
 export default StyleSheet.create({
   containerStyle: {},
   inputContainerStyle: {
-    flexDirection: 'row',
-    alignItems: 'center',
+    flexDirection: "row",
+    alignItems: "center",
     borderWidth: 1,
-    borderColor: 'silver',
+    borderColor: "silver",
     height: 40,
     paddingHorizontal: 5,
+    backgroundColor: "white",
   },
   inputStyle: {
     flex: 1,
@@ -19,21 +20,21 @@ export default StyleSheet.create({
   messageStyle: {
     fontSize: 10,
     marginTop: 2,
-    textAlign: 'right',
+    textAlign: "right",
   },
   flagContainerStyle: {
     width: 40,
     height: 25,
     borderWidth: 1,
-    borderColor: 'silver',
+    borderColor: "silver",
   },
   codeContainerStyle: {
-    flexDirection: 'row',
-    alignItems: 'center',
+    flexDirection: "row",
+    alignItems: "center",
   },
   codeStyle: {
     marginHorizontal: 5,
-    color: 'gray',
+    color: "gray",
   },
   listStyle: {
     maxHeight: 200,
@@ -44,12 +45,12 @@ export default StyleSheet.create({
   listContainerStyle: {
     marginTop: 5,
     borderWidth: 1,
-    borderColor: 'silver',
+    borderColor: "silver",
     padding: 5,
   },
   searchInputContainerStyle: {
     borderWidth: 1,
-    borderColor: 'silver',
+    borderColor: "silver",
     paddingHorizontal: 5,
     marginBottom: 5,
   },
@@ -57,10 +58,10 @@ export default StyleSheet.create({
     height: 40,
   },
   itemContainerStyle: {
-    flexDirection: 'row',
+    flexDirection: "row",
     height: 40,
-    justifyContent: 'space-between',
-    alignItems: 'center',
+    justifyContent: "space-between",
+    alignItems: "center",
   },
   itemStyle: {
     fontSize: 12,
@@ -68,7 +69,7 @@ export default StyleSheet.create({
   },
   itemCodeStyle: {
     marginHorizontal: 5,
-    color: 'gray',
+    color: "gray",
     fontSize: 12,
   },
   flagStyle: {

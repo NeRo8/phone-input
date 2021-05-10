@@ -1,6 +1,6 @@
 {
   "name": "@my_name_is_nero/input-phone",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Phone input component",
   "main": "index.js",
   "bin": {},
