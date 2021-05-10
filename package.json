@@ -1,0 +1,21 @@
+{
+  "name": "@my_name_is_nero/input-phone",
+  "version": "1.0.0",
+  "description": "Phone input component",
+  "main": "src/index.js",
+  "bin": {},
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/NeRo8/phone-input.git"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "keywords": [],
+  "author": "my_name_is_nero",
+  "license": "MIT",
+  "dependencies": {}
+}
