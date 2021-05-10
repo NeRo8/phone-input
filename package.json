@@ -1,6 +1,6 @@
 {
   "name": "@my_name_is_nero/input-phone",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Phone input component",
   "main": "src/index.js",
   "bin": {},
@@ -14,7 +14,10 @@
   "publishConfig": {
     "access": "public"
   },
-  "keywords": [],
+  "keywords": [
+	'react-native',
+'Phone-input'   
+],
   "author": "my_name_is_nero",
   "license": "MIT",
   "dependencies": {}
