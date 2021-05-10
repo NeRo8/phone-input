@@ -6,39 +6,13 @@ import {
   TouchableOpacity,
   Image,
   FlatList,
-  ImageStyle,
-  TextInputProps,
-  StyleProp,
-  ViewStyle,
-  TextStyle,
 } from "react-native";
 
 import { getFlag, COUNTRIES } from "./config";
 
 import styles from "./styles";
 
-export interface IInputPhoneProps extends TextInputProps {
-  containerStyle?: StyleProp<ViewStyle>;
-  inputContainerStyle?: StyleProp<ViewStyle>;
-  inputStyle?: StyleProp<TextStyle>;
-  message?: string;
-  messageStyle?: StyleProp<ViewStyle>;
-  codeStyle?: StyleProp<TextStyle>;
-  listStyle?: StyleProp<ViewStyle>;
-  listContainerStyle?: StyleProp<ViewStyle>;
-  listContentContainerStyle?: StyleProp<ViewStyle>;
-  label?: string;
-  labelStyle?: StyleProp<TextStyle>;
-  searchInputStyle?: StyleProp<TextStyle>;
-  placeholderSearch?: string;
-  searchInputContainerStyle?: StyleProp<ViewStyle>;
-  itemContainerStyle?: StyleProp<ViewStyle>;
-  itemStyle?: StyleProp<TextStyle>;
-  itemCodeStyle?: StyleProp<TextStyle>;
-  flagContainerStyle?: StyleProp<ImageStyle>;
-}
-
-const InputPhone = (props: IInputPhoneProps) => {
+const InputPhone = (props) => {
   const {
     containerStyle,
     inputContainerStyle,
