@@ -47,6 +47,7 @@ export default StyleSheet.create({
     borderWidth: 1,
     borderColor: "silver",
     padding: 5,
+    backgroundColor: "white",
   },
   searchInputContainerStyle: {
     borderWidth: 1,

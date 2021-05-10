@@ -78,8 +78,8 @@ const InputPhone = (props) => {
   };
 
   return (
-    <>
-      <View style={[styles.containerStyle, containerStyle]}>
+    <View style={[styles.containerStyle, containerStyle]}>
+      <View>
         {label && <Text style={[styles.labelStyle, labelStyle]}>{label}</Text>}
         <View style={[styles.inputContainerStyle, inputContainerStyle]}>
           <TouchableOpacity
@@ -136,7 +136,7 @@ const InputPhone = (props) => {
           />
         </View>
       )}
-    </>
+    </View>
   );
 };
 
