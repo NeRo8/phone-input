@@ -2,6 +2,8 @@
 
 Phone number input field.
 
+![](example.gif)
+
 
 # Installation
 
