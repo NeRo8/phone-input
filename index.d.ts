@@ -1,5 +1,11 @@
 import React from "react";
-import { TextInputProps, ViewStyle, TextStyle, ImageStyle } from "react-native";
+import {
+  TextInputProps,
+  StyleProp,
+  ViewStyle,
+  TextStyle,
+  ImageStyle,
+} from "react-native";
 
 export interface IInputPhoneProps extends TextInputProps {
   containerStyle?: StyleProp<ViewStyle>;
@@ -22,6 +28,6 @@ export interface IInputPhoneProps extends TextInputProps {
   flagContainerStyle?: StyleProp<ImageStyle>;
 }
 
-declare class PhoneInput extends React.PureComponent<IInputPhoneProps, any> {}
+declare class InputPhone extends React.PureComponent<IInputPhoneProps, any> {}
 
-export default { PhoneInput };
+export { InputPhone };

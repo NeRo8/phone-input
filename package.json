@@ -15,9 +15,9 @@
     "access": "public"
   },
   "keywords": [
-	"react-native",
-  "phone-input"   
-],
+    "react-native",
+    "phone-input"   
+  ],
   "author": "my_name_is_nero",
   "license": "MIT",
   "dependencies": {}
