@@ -7,6 +7,11 @@ import {
   ImageStyle,
 } from "react-native";
 
+export type PhoneNumber = {
+  countryCode: string;
+  phoneNumber: string;
+};
+
 export interface IInputPhoneProps extends TextInputProps {
   containerStyle?: StyleProp<ViewStyle>;
   inputContainerStyle?: StyleProp<ViewStyle>;
@@ -26,6 +31,8 @@ export interface IInputPhoneProps extends TextInputProps {
   itemStyle?: StyleProp<TextStyle>;
   itemCodeStyle?: StyleProp<TextStyle>;
   flagContainerStyle?: StyleProp<ImageStyle>;
+  value: PhoneNumber;
+  onChangeText: (value: PhoneNumber) => void;
 }
 
 declare class InputPhone extends React.PureComponent<IInputPhoneProps, any> {}

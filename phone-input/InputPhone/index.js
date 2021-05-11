@@ -51,6 +51,19 @@ const InputPhone = (props) => {
     setFilteredCountries(result);
   }, [searchQuery]);
 
+  const onEnterPhoneNumber = (value) => {
+    try {
+      if (onChangeText) {
+        onChangeText({
+          phoneNumber: value,
+          countryCode: country.dialCode,
+        });
+      }
+    } catch (e) {
+      console.error("Error when try enter phone number");
+    }
+  };
+
   const renderItem = ({ item }) => {
     const onPressItem = () => {
       setCountry(item);
@@ -100,8 +113,8 @@ const InputPhone = (props) => {
             multiline={false}
             placeholder={placeholder}
             style={[styles.inputStyle, inputStyle]}
-            value={value}
-            onChangeText={onChangeText}
+            value={value?.phoneNumber}
+            onChangeText={onEnterPhoneNumber}
           />
         </View>
         {message && (

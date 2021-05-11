@@ -25,7 +25,7 @@ const styles = StyleSheet.create({
 });
 
 export default function App() {
-  const [phoneNumber, setPhoneNumber] = React.useState('');
+  const [phoneNumber, setPhoneNumber] = React.useState({countryCode: '', phoneNumber: ''});
   
   return (
     <View style={styles.containerStyle}>
