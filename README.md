@@ -8,7 +8,7 @@ Phone number input field.
 # Installation
 
 ```sh
-npm i react-native-phone-input --save
+npm i --save @my_name_is_nero/input-phone
 ```
 
 
