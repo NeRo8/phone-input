@@ -12,7 +12,7 @@ import { getFlag, COUNTRIES } from "../config";
 
 import styles from "./styles";
 
-const InputPhone = (props) => {
+const InputPhoneWithMask = (props) => {
   const {
     containerStyle,
     inputContainerStyle,
@@ -35,6 +35,8 @@ const InputPhone = (props) => {
     itemStyle,
     itemCodeStyle,
     flagContainerStyle,
+    mask,
+    editable = true,
   } = props;
   const [country, setCountry] = useState(COUNTRIES[0]);
   const [isListVisible, setListVisible] = useState(false);
@@ -53,14 +55,64 @@ const InputPhone = (props) => {
 
   const onEnterPhoneNumber = (inputText) => {
     try {
-      if (onChangeText) {
+      const clearValue = inputText.replace(/\(|\)|#|-/g, "");
+
+      const maskArray = mask.split("");
+      let selectedIndex = 0;
+
+      let canEnterPhoneNumber = inputText.includes("#");
+
+      const phoneWithMask = maskArray
+        .map((item) => {
+          if (item === "#" && selectedIndex < clearValue.length) {
+            selectedIndex += 1;
+            return clearValue[selectedIndex - 1];
+          }
+          return item;
+        })
+        .join("");
+
+      if (
+        inputText.length > value.phoneWithMask.length &&
+        canEnterPhoneNumber
+      ) {
         onChangeText({
-          phoneNumber: inputText,
+          phoneNumber: clearValue,
           countryCode: country.dialCode,
+          phoneWithMask: phoneWithMask,
         });
       }
     } catch (e) {
       console.error("Error when try enter phone number");
+    }
+  };
+
+  const onPressKey = ({ nativeEvent }) => {
+    if (nativeEvent.key === "Backspace") {
+      const clearValue = value.phoneNumber.slice(
+        0,
+        value.phoneNumber.length - 1
+      );
+
+      const maskArray = mask.split("");
+      let selectedIndex = 0;
+
+      const phoneWithMask = maskArray
+        .map((item) => {
+          if (item === "#" && selectedIndex < clearValue.length) {
+            selectedIndex += 1;
+            return clearValue[selectedIndex - 1];
+          }
+          return item;
+        })
+        .join("");
+
+      onChangeText({
+        phoneNumber: clearValue,
+        countryCode: value.countryCode,
+        phoneWithMask: phoneWithMask,
+      });
+      return;
     }
   };
 
@@ -96,6 +148,7 @@ const InputPhone = (props) => {
         {label && <Text style={[styles.labelStyle, labelStyle]}>{label}</Text>}
         <View style={[styles.inputContainerStyle, inputContainerStyle]}>
           <TouchableOpacity
+            disabled={!editable}
             style={styles.codeContainerStyle}
             onPress={onChangeListVisible}
           >
@@ -110,11 +163,13 @@ const InputPhone = (props) => {
           </TouchableOpacity>
           <TextInput
             {...props}
+            editable={editable}
             multiline={false}
-            placeholder={placeholder}
+            placeholder={placeholder || mask}
             style={[styles.inputStyle, inputStyle]}
-            value={value?.phoneNumber}
+            value={value?.phoneWithMask}
             onChangeText={onEnterPhoneNumber}
+            onKeyPress={onPressKey}
             keyboardType="numeric"
           />
         </View>
@@ -154,4 +209,4 @@ const InputPhone = (props) => {
   );
 };
 
-export default InputPhone;
+export default InputPhoneWithMask;

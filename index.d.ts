@@ -35,6 +35,15 @@ export interface IInputPhoneProps extends TextInputProps {
   onChangeText: (value: PhoneNumber) => void;
 }
 
+export interface IInputPhoneWithMaskProps extends IInputPhoneProps {
+  mask: string;
+}
+
 declare class InputPhone extends React.PureComponent<IInputPhoneProps, any> {}
 
-export { InputPhone };
+declare class InputPhoneWithMask extends React.PureComponent<
+  IInputPhoneWithMaskProps,
+  any
+> {}
+
+export { InputPhone, InputPhoneWithMask };
