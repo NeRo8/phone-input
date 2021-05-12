@@ -10,6 +10,7 @@ import {
 export type PhoneNumber = {
   countryCode: string;
   phoneNumber: string;
+  phoneWithMask?: string;
 };
 
 export interface IInputPhoneProps extends TextInputProps {
